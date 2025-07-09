@@ -1,0 +1,245 @@
+#premios {
+    overflow: hidden;
+    position: relative;
+}
+
+#premios img.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#premios .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+#premios header h2 {
+    margin-bottom: 1rem;
+}
+
+#premios header p.obs {
+    font-size: 1.6rem;
+    padding-inline: 10%;
+    font-weight: 500;
+}
+
+#premios .card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 2rem;
+
+    background: linear-gradient(to bottom, #030a1b, #0f1a26);
+
+    padding: 1.5rem;
+    padding-block: 5rem;
+    border: 1px solid #1da4f3;
+}
+
+#premios .card p.obs {
+    font-size: 1.4rem;
+    color: #ffffff80;
+
+    position: relative;
+    z-index: 1;
+
+    margin-top: 6rem;
+}
+
+#premios .card h4 {
+    color: #fff;
+    font-family: var(--ncs);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+#premios .card h4 span {
+    font-family: var(--ncs);
+    background: linear-gradient(45deg, #1da4f3, #056ba6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#premios .card .topics {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 6rem;
+
+    margin-top: 2.5rem;
+
+    width: 100%;
+}
+
+#premios .card .topics p {
+    color: #dae1e6;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+#premios .card .topics p span {
+    color: #e7e7e7;
+    font-weight: 500;
+}
+
+#premios .card .topics p::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -3rem;
+    left: 0;
+
+    background: linear-gradient(to right, #004f7c 60%, transparent);
+}
+
+#premios .card .topics ion-icon {
+    color: var(--primary-color);
+}
+
+#premios .card .topics p:nth-child(1) ion-icon {
+    color: #FFD700;
+}
+
+#premios .card .topics p:nth-child(2) ion-icon {
+    color: #E0E0E0;
+}
+
+#premios .card .topics p:nth-child(3) ion-icon {
+    color: #A0522D;
+}   
+
+#premios .card .topics p:nth-child(1) small.bg {
+    background: linear-gradient(45deg, #F6E27F, #FFD700, #B8860B);
+    color: #000;
+}
+
+#premios .card .topics p:nth-child(2) small.bg {
+    background: linear-gradient(45deg, #E0E0E0, #B0B0B0, #888888);
+    color: #000;
+}
+
+#premios .card .topics p:nth-child(3) small.bg {
+    background: linear-gradient(45deg, #B86B3A, #A0522D, #7C482B);
+}
+
+#premios .card .topics p small {
+    background: linear-gradient(45deg, #1da4f3, #056ba6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+
+    
+}
+
+#premios .card .topics p small.bg {
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background: linear-gradient(45deg, #1da5f3ac, #056ba636);
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+#premios a button {
+    margin-top: 2rem;
+}
+
+@media (min-width: 1080px) {
+    section#premios .card a,
+    section#premios .card a button {
+        width: 100%;
+    }
+
+    section#premios a button {
+        margin-top: 3rem;
+    }
+
+    section#premios .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section#premios header {
+        padding-inline: 15%;
+        margin-bottom: 3rem;
+    }
+
+    section#premios .card {
+        padding: 4rem;
+    }
+
+    section#premios .card h4 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    section#premios .card .topics {
+        width: 100%;
+        margin-top: 3rem;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "a b"
+    "a b"
+    "a b"
+    "a b"
+    "a b";
+    }
+
+    section#premios .card .topics p {
+        font-size: 1.6rem;
+    }
+
+/* Coluna da esquerda (1º ao 5º lugar) */
+section#premios .card .topics p:nth-child(1) { grid-column: 1; grid-row: 1; }
+section#premios .card .topics p:nth-child(2) { grid-column: 1; grid-row: 2; }
+section#premios .card .topics p:nth-child(3) { grid-column: 1; grid-row: 3; }
+section#premios .card .topics p:nth-child(4) { grid-column: 1; grid-row: 4; }
+section#premios .card .topics p:nth-child(5) { grid-column: 1; grid-row: 5; }
+
+/* Coluna da direita (6º ao 10º lugar) */
+section#premios .card .topics p:nth-child(6) { grid-column: 2; grid-row: 1; }
+section#premios .card .topics p:nth-child(7) { grid-column: 2; grid-row: 2; }
+section#premios .card .topics p:nth-child(8) { grid-column: 2; grid-row: 3; }
+section#premios .card .topics p:nth-child(9) { grid-column: 2; grid-row: 4; }
+section#premios .card .topics p:nth-child(10) { grid-column: 2; grid-row: 5; }
+
+    section#premios .card a button {
+        filter: drop-shadow(0 0 20px #1da5f349);
+    }
+
+    section#premios .card a button:hover {
+        filter: drop-shadow(0 0 40px #1da5f376);
+    }
+
+    section#premios .card p.obs {
+        margin: 0;
+        padding-inline: 5%;
+        margin-top: 6rem;
+    }
+}
+
+@media (min-width: 1700px) {
+    section#premios .card .topics {
+        width: 90%;
+    }
+}
+
