@@ -86,19 +86,17 @@ if (larguraDaTela < 800) {
 
 const vslDiv = document.getElementById("vsl");
 
-// if (vslDiv) {
-//   vslDiv.addEventListener("click", () => {
-//     vslDiv.innerHTML = `
-//       <iframe width="100%" height="100%" 
-//         src="https://www.youtube.com/embed/acnq8_PvW_k?autoplay=1&si=GACYvwVrbYLsIfzE"
-//         title="YouTube video player"
-//         frameborder="0"
-//         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-//         allowfullscreen>
-//       </iframe>
-//     `;
-//   });
-// }
+vslDiv.addEventListener("click", () => {
+  vslDiv.innerHTML = `
+    <iframe width="100%" height="100%" 
+      src="https://www.youtube.com/embed/XnhQyOG09d4?autoplay=1"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  `;
+});
 
 // Ajuste para data-alvo 05/03/2025:
 const targetDate = new Date("2025-04-29T00:00:00");
