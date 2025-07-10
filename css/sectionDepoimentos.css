@@ -27,7 +27,6 @@
 
     transition: all 300ms ease-in-out;
 
-    mask-image: linear-gradient(to bottom, #000 70%, transparent);
 }
 
 #depoimentos .cards .card:hover img {
