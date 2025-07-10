@@ -10,4 +10,6 @@
 @import './head.css';
 @import './tarja.css';
 
-
+@import './author.css';
+@import './footer.css';
+@import './footerPagamento.css';
