@@ -89,7 +89,7 @@ const vslDiv = document.getElementById("vsl");
 vslDiv.addEventListener("click", () => {
   vslDiv.innerHTML = `
     <iframe width="100%" height="100%" 
-      src="https://www.youtube.com/embed/XnhQyOG09d4?autoplay=1"
+      src="https://www.youtube.com/embed/uXFdXXJTHn0?autoplay=1"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
