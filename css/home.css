@@ -202,7 +202,7 @@
 
   #home button.voltar {
     color: #fff;
-
+    cursor: pointer;
     position: absolute;
     top: 2%;
     left: 3%;
