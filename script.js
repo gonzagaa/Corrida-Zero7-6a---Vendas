@@ -98,57 +98,58 @@ vslDiv.addEventListener("click", () => {
   `;
 });
 
-// Ajuste para data-alvo 05/03/2025:
-const targetDate = new Date("2025-04-29T00:00:00");
+// Data final: 24 de junho de 2025 às 00:01:00 (horário local)
 
-// Atualiza o timer a cada segundo
-const timerInterval = setInterval(updateCountdown, 1000);
-updateCountdown(); // Atualiza ao carregar a página
+const dataFinal = new Date("2025-07-20T23:59:00");
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+const diasEl = document.getElementById('dias');
+const horasEl = document.getElementById('horas');
+const minutosEl = document.getElementById('minutos');
+const segundosEl = document.getElementById('segundos');
+const mensagemEl = document.getElementById('mensagem');
 
-  if (distance < 0) {
-    document.getElementById("countdown").innerHTML = "Tempo esgotado!";
-    clearInterval(timerInterval);
+function atualizarContagem() {
+  const agora = new Date();
+  const diferenca = dataFinal - agora;
+
+  if (diferenca <= 0) {
+    clearInterval(intervalo);
+    diasEl.innerText = "00";
+    horasEl.innerText = "00";
+    minutosEl.innerText = "00";
+    segundosEl.innerText = "00";
+    mensagemEl.innerText = "Tempo esgotado!";
     return;
   }
 
-  // Cálculos de dias, horas, minutos, segundos
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
- // Cria 4 "caixas", cada uma com número + unidade
-  const countdownHTML = `
-    <div class="time-container">
-      <div class="time-box">
-        <span class="count-number">${days}</span>
-        <span class="count-unit">d</span>
-      </div>
-      <div class="time-box">
-        <span class="count-number">${hours}</span>
-        <span class="count-unit">h</span>
-      </div>
-      <div class="time-box">
-        <span class="count-number">${minutes}</span>
-        <span class="count-unit">m</span>
-      </div>
-      <div class="time-box">
-        <span class="count-number">${seconds}</span>
-       <span class="count-unit">s</span>
-      </div>
-    </div>
-  `;
-
-  // Insere na tela
-  document.getElementById("countdown").innerHTML = countdownHTML;
+  diasEl.innerText = dias.toString().padStart(2, '0');
+  horasEl.innerText = horas.toString().padStart(2, '0');
+  minutosEl.innerText = minutos.toString().padStart(2, '0');
+  segundosEl.innerText = segundos.toString().padStart(2, '0');
 }
 
+const intervalo = setInterval(atualizarContagem, 1000);
+atualizarContagem(); // Inicializa já com os valores corretos
 
+document.addEventListener("DOMContentLoaded", () => {
+  const tarja = document.querySelector(".tarjaTimerNav");
+  const nav = document.querySelector("#navigation");
+  const header = document.querySelector("#home");
 
+  if (!tarja || !nav || !header) return;
+
+  // Após 3 segundos, ativa a tarja e mantém fixa
+  setTimeout(() => {
+    tarja.classList.add("active");
+    nav.classList.add("activeTarja");
+    header.classList.add("activeTarjaHome");
+  }, 3000);
+});
 
 
 
